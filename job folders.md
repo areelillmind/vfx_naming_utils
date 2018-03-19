@@ -1,6 +1,5 @@
 # VFX Versions and publishing:
 
-This shows the new folders and reviews our folder structure as it's been getting a bit messy lately.
 
     JOB/
 
