@@ -13,7 +13,7 @@ logger=logging.getLogger()
 MOLI_NAMING_REGEX=r'''
 ([A-Z]+[0-9]*)				# SHOW code, group 0 
 _(RL[0-9]{2}|EP[0-9]{2})		# ReeL or EPisode number, group 1 
-_([0-9]+[A-Z]?)				# scene number, can include letters after the number, group 2
+_([0-9]+[A-Z]?)				# sequence number, can include letters after the number, group 2
 _([0-9]+[A-Z]?)				# shot number, can include letters after the number, group 3
 (_[a-z]+)?				# task name, group 4
 _(v[0-9]+)				# version number, group 5
@@ -33,7 +33,7 @@ class Shot_Name_Parser:
 		    self.nameElements=OrderedDict()
 		    self.nameElements['show']=self.parsedName[0][0]
 		    self.nameElements['rlep']=self.parsedName[0][1]
-		    self.nameElements['scn']=self.parsedName[0][2]
+		    self.nameElements['seq']=self.parsedName[0][2]
 		    self.nameElements['sht']=self.parsedName[0][3]
 		    self.nameElements['task']=self.parsedName[0][4][1:]
 		    self.nameElements['version']=self.parsedName[0][5]
@@ -100,7 +100,7 @@ class Shot_Name_Parser:
 	    return '_'.join(values)
 
 ## TO DO
-## Set next version which will check name matches (shot, rlep, scn, sht and task) and then ensure that the new version is higher than the any preceeding
+## Set next version which will check name matches (shot, rlep, seq, sht and task) and then ensure that the new version is higher than the any preceeding
 
 ## Set Logger
 if __name__ == '__main__':
